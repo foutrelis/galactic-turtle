@@ -1,0 +1,7 @@
+Galactic Turtle
+
+version 1.0.1 (08/02/2008):
+	* Fix incompatibility with GCC 4.3.
+
+version 1.0 (05/29/2008):
+	* Initial release.
