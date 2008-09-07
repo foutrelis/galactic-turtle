@@ -6,4 +6,5 @@ galacticd_SOURCES = galacticd.c galacticd.h \
                     QRBG/QRBG.cpp QRBG/QRBG.h \
                     QRBG/QRBG_wrapper.cpp QRBG/QRBG_wrapper.h
 
-galacticd_LDADD = $(SQLITE_LIBS)
+galacticd_CFLAGS = @SQLITE3_CFLAGS@
+galacticd_LDFLAGS = @SQLITE3_LIBS@
