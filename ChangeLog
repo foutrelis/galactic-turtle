@@ -1,3 +1,8 @@
+Galactic Turtle 1.1.1 2008-09-07
+--------------------------------
+ * Use pkg-config to determine the location of sqlite3 during compilation. This
+   should allow Galactic Turtle to build on more POSIX systems (e.g. FreeBSD).
+
 Galactic Turtle 1.1.0 2008-09-07
 --------------------------------
  * Switched to Autotools.
