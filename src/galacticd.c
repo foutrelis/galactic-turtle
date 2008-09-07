@@ -17,6 +17,10 @@
    You should have received a copy of the GNU General Public License
    along with Galactic Turtle.  If not, see <http://www.gnu.org/licenses/>. */
 
+#if HAVE_CONFIG_H
+# include <config.h>
+#endif
+
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <sys/time.h>
@@ -35,7 +39,7 @@
 #include "common.h"
 #include "galacticd.h"
 #include "scoreboard.h"
-#include "QRBG_wrapper.h"
+#include "QRBG/QRBG_wrapper.h"
 
 #define DFLPORT 8000
 #define LISTENQ 10
@@ -1023,13 +1027,24 @@ int main(int argc, char *argv[]) {
 	struct sockaddr_in cliaddr, servaddr;
 	game_node_t *game_list = NULL;
 	int option_index = 0;
+	char *version;
 	struct option long_options[] = {
-		{"really-random", 0, 0, 'r'}
+		{"really-random", 0, 0, 'r'},
+		{"version", 0, 0, 'v'}
 	};
 	
 	/* Parse command-line options */
-	while ((opt = getopt_long(argc, argv, "dp:", long_options, &option_index)) != -1) {
+	while ((opt = getopt_long(argc, argv, "vdp:", long_options, &option_index)) != -1) {
 		switch (opt) {
+			case 'v':
+#ifndef VERSION
+				version = VERSION;
+#else
+				version = "(Unknown Version)";
+#endif
+				printf("Galactic Turtle %s\n", PACKAGE_VERSION);
+				exit(0);
+				break;
 			case 'p':
 				lport = atoi(optarg);
 				break;
