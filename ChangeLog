@@ -1,5 +1,9 @@
 Galactic Turtle
 
+version 1.1.0 (09/07/2008):
+	* Switched to Autotools.
+	* Added --version switch.
+
 version 1.0.1 (08/02/2008):
 	* Fix incompatibility with GCC 4.3.
 
