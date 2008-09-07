@@ -1042,7 +1042,7 @@ int main(int argc, char *argv[]) {
 #else
 				version = "(Unknown Version)";
 #endif
-				printf("Galactic Turtle %s\n", PACKAGE_VERSION);
+				printf("Galactic Turtle %s\n", VERSION);
 				exit(0);
 				break;
 			case 'p':
