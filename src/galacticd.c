@@ -1037,12 +1037,12 @@ int main(int argc, char *argv[]) {
 	while ((opt = getopt_long(argc, argv, "vdp:", long_options, &option_index)) != -1) {
 		switch (opt) {
 			case 'v':
-#ifndef VERSION
+#ifdef VERSION
 				version = VERSION;
 #else
 				version = "(Unknown Version)";
 #endif
-				printf("Galactic Turtle %s\n", VERSION);
+				printf("Galactic Turtle %s\n", version);
 				exit(0);
 				break;
 			case 'p':
